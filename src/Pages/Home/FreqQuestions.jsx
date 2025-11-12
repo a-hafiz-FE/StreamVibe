@@ -2,6 +2,7 @@ import React from 'react'
 import Typography from '../../Components/Typography'
 import Button from '../../Components/Button'
 import QuestionCard from '../../Components/QuestionCard'
+import CardText from '../../Components/CardText'
 
 const FreqQuestions = () => {
 
@@ -9,10 +10,7 @@ const FreqQuestions = () => {
   return (
     <div className='flex flex-col gap-15 py-10'>
       <section className='relative flex gap-20'>
-        <section className='flex flex-col gap-2.5'>
-          <Typography customClass='font-bold text-[28px]'>Frequently Asked Questions</Typography>
-          <Typography customClass='font-normal text-base !text-[#999999]'>Got questions? We've got answers! Check out our FAQ section to find answers to the most common questions about StreamVibe.</Typography>
-        </section>
+        <CardText Ctitle='Frequently Asked Questions' Cdesc="Got questions? We've got answers! Check out our FAQ section to find answers to the most common questions about StreamVibe." />
 
         <Button customClass='absolute bottom-0 right-0 h-12.25 py-3.5 px-5 flex gap-2.5 rounded-md bg-[#E50000]'>
           <Typography customClass='font-semibold text-sm'>Ask a Question</Typography>

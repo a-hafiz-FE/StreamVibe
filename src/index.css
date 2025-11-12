@@ -2,9 +2,10 @@
 @import "tailwindcss";
 
 
-/* :root {
-  
-} */
+:root {
+ background-color: #141414;
+ overflow-x: hidden;
+}
 
 @theme {
   --font-manrope: Manrope, "sans-serif"

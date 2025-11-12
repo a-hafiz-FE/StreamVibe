@@ -2,6 +2,7 @@ import React from 'react'
 import Image from '../../Components/Image'
 import Button from '../../Components/Button'
 import Typography from '../../Components/Typography'
+import CardText from '../../Components/CardText'
 
 
 const Landing = () => {

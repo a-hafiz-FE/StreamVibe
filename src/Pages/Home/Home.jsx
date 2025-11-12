@@ -8,17 +8,22 @@ import DeviceSection from './DeviceSection'
 import CategorySection from './CategorySection'
 import FreqQuestions from './FreqQuestions'
 import PlanSection from './PlanSection'
+import TrailSection from './TrailSection'
 
 const Home = () => {
   return (
-    <main className='bg-[#141414] h-screen'>
-      <Landing />
+    <main>
+      <section className='h-screen bg-[#141414]'>
+        <Landing />
+      </section>
 
-      <section className='flex flex-col px-30 bg-[#141414]'>
+      <section className='flex flex-col px-20'>
         <CategorySection />
         <DeviceSection />
         <FreqQuestions />
         <PlanSection />
+        <TrailSection />
+
         
       </section>
 

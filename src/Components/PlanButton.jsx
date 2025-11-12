@@ -15,11 +15,14 @@ const PlanButton = () => {
   }
 
   return (
-    <div className='flex rounded-lg border box-border border-[#262626] bg-[#0F0F0F]'>
-      <button className='flex rounded-[100px] py-3 px-5 gap-2.5 focus:rounded-md focus:bg-[#1F1F1F]'>
-        <Typography customClass='font-medium text-sm !text-[#999999] !focus:text-[#FFFFFF]'>Monthly</Typography>
+    <>
+      <button className='flex items-center rounded-[100px] py-3 px-5 gap-2.5 focus:rounded-md focus:bg-[#1F1F1F] cursor-pointer'>
+        <Typography customClass='font-medium text-sm !text-[#999999] w-20 focus:w-23.5'>Monthly</Typography>
       </button>
-    </div>
+      <button className='flex items-center rounded-[100px] py-3 px-5 gap-2.5 focus:rounded-md focus:bg-[#1F1F1F] cursor-pointer'>
+        <Typography customClass='font-medium text-sm !text-[#999999] w-20 focus:w-23.5'>Yearly</Typography>
+      </button>
+    </>
   )
 }
 
