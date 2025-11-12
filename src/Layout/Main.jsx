@@ -9,7 +9,7 @@ const Main = (WrappedComponent) => {
       <>
         <Header />
         <WrappedComponent {...props} />
-        {/* <Footer /> */}
+        <Footer />
       </>
     )
   }

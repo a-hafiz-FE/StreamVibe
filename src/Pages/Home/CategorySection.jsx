@@ -3,15 +3,13 @@ import Typography from '../../Components/Typography'
 import Image from '../../Components/Image'
 import Button from '../../Components/Button'
 import CategoryCard from '../../Components/CategoryCard'
+import CardText from '../../Components/CardText'
 
 const CategorySection = () => {
   return (
     <section className='flex flex-col gap-15 py-10'>
       <section className='flex gap-20'>
-        <section className='flex flex-col gap-2.5'>
-          <Typography customClass='font-bold text-[28px]'>Explore our wide variety of categories</Typography>
-          <Typography customClass='font-normal text-base !text-[#999999]'>Whether you're looking for a comedy to make you laugh, a drama to make you think, or a documentary to learn something new</Typography>
-        </section>
+        <CardText Ctitle="Explore our wide variety of categories" Cdesc="Whether you're looking for a comedy to make you laugh, a drama to make you think, or a documentary to learn something new" />
 
         <section className='flex flex-1 justify-end'>
           <section className='flex p-3 gap-3 border box-border border-[#1F1F1F] bg-[#0F0F0F] rounded-[10px] items-center'>
