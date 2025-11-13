@@ -9,6 +9,7 @@ const CustomButtonGroup = ({ next, previous, goToSlide, visibleSlides = 5, ...re
 
   const numberOfDots = Math.ceil(totalItems / visibleSlides);
   const activeDotIndex = Math.floor(currentSlide / visibleSlides);
+  Math.r
   const maxSlideIndex = (numberOfDots - 1) * visibleSlides;
   return (
     <div className="absolute top-24 right-0 z-10 p-3 flex items-center gap-3 border box-border border-[#1F1F1F] bg-[#0F0F0F] rounded-[10px] ">
