@@ -19,9 +19,12 @@ const Home = () => {
         <Landing />
       </section>
 
-      <section className='flex flex-col px-20'>
-        <CustomCarousel />
+
+      <section className='px-17.5'>
         <CategorySection />
+      </section>
+      <section className='flex flex-col px-20'>
+        
         <DeviceSection />
         <FreqQuestions />
         <PlanSection />

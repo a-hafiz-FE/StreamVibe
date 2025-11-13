@@ -3,15 +3,31 @@ import Button from '../../Components/Button'
 import Image from '../../Components/Image'
 
 
-const CustomButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
-  const { carouselState: { currentSlide } } = rest
+const CustomButtonGroup = ({ next, previous, goToSlide, visibleSlides = 5, ...rest }) => {
+  const { carouselState } = rest;
+  const { currentSlide, totalItems } = carouselState;
+
+  const numberOfDots = Math.ceil(totalItems / visibleSlides);
+  const activeDotIndex = Math.floor(currentSlide / visibleSlides);
+  const maxSlideIndex = (numberOfDots - 1) * visibleSlides;
   return (
-    <div className="carousel-button-group absolute bottom-4 right-4 z-10 flex items-center gap-4 bg-green-500">
-      <Button customClass={`p-2 cursor-pointer ${currentSlide === 0 ? 'opacity-50 cursor-not-allowed' : ''}`} onClick={previous}>
+    <div className="absolute top-24 right-0 z-10 p-3 flex items-center gap-3 border box-border border-[#1F1F1F] bg-[#0F0F0F] rounded-[10px] ">
+      <Button customClass={`cursor-pointer ${currentSlide === 0 ? 'opacity-50 cursor-not-allowed' : ''}`} onClick={previous}>
         <Image imgSrc='/src/assets/Left.svg' customClass='p-2.5 border box-border rounded-md border-[#1F1F1F] bg-[#1A1A1A] size-11' />
       </Button>
 
-      <Button onClick={next}>
+      <div className="flex gap-1">
+        {Array.from({ length: numberOfDots }).map((_, index) => (
+          <span
+            key={index}
+            onClick={() => goToSlide(index * visibleSlides)}
+            className={`rounded-full cursor-pointer h-1 ${index === activeDotIndex ? 'w-4.5 bg-[#E50000]' : 'w-3.5 bg-[#333333]'
+              }`}
+          />
+        ))}
+      </div>
+
+      <Button customClass={`cursor-pointer ${currentSlide >= maxSlideIndex ? 'opacity-50 cursor-not-allowed' : ''}`} onClick={next}>
         <Image imgSrc='/src/assets/Right.svg' customClass='p-2.5 border box-border rounded-md border-[#1F1F1F] bg-[#1A1A1A] size-11' />
       </Button>
     </div>
