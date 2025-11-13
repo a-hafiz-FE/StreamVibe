@@ -6,7 +6,7 @@ import CardText from '../../Components/CardText'
 
 const PlanSection = () => {
   return (
-    <section className='flex flex-col gap-15 py-10'>
+    <section className='flex flex-col gap-15 py-20'>
       <section className='relative flex gap-20'>
         <CardText Ctitle="Choose the plan that's right for you" Cdesc='Join StreamVibe and select from our flexible subscription options tailored to suit your viewing preferences. Get ready for non-stop entertainment!' />
 

@@ -7,7 +7,7 @@ import CardText from '../../Components/CardText'
 
 const CategorySection = () => {
   return (
-    <section className='flex flex-col gap-15 py-10'>
+    <section className='flex flex-col gap-15 py-20'>
       <section className='flex gap-20'>
         <CardText Ctitle="Explore our wide variety of categories" Cdesc="Whether you're looking for a comedy to make you laugh, a drama to make you think, or a documentary to learn something new" />
 

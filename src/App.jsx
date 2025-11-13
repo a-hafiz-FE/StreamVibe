@@ -1,13 +1,24 @@
 import { useState } from 'react'
 import './App.css'
 import Home from './Pages/Home/Home'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import MoviesShows from './Pages/Movies&Shows/MoviesShows';
+import Support from './Pages/Support/Support';
+import Subscriptions from './Pages/Subscriptions/Subscriptions';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <Home />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Movies&Shows" element={<MoviesShows />} />
+        <Route path="/Support" element={<Support />} />
+        <Route path="Subscriptions" element={<Subscriptions />} />
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }

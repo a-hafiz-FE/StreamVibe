@@ -9,8 +9,10 @@ import CategorySection from './CategorySection'
 import FreqQuestions from './FreqQuestions'
 import PlanSection from './PlanSection'
 import TrailSection from './TrailSection'
+import CustomCarousel from './CustomCarousel'
 
 const Home = () => {
+
   return (
     <main>
       <section className='h-screen bg-[#141414]'>
@@ -18,6 +20,7 @@ const Home = () => {
       </section>
 
       <section className='flex flex-col px-20'>
+        <CustomCarousel />
         <CategorySection />
         <DeviceSection />
         <FreqQuestions />

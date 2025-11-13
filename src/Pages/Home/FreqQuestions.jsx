@@ -8,7 +8,7 @@ const FreqQuestions = () => {
 
   const QAns = "No Answer Available Yet"
   return (
-    <div className='flex flex-col gap-15 py-10'>
+    <div className='flex flex-col gap-15 py-20'>
       <section className='relative flex gap-20'>
         <CardText Ctitle='Frequently Asked Questions' Cdesc="Got questions? We've got answers! Check out our FAQ section to find answers to the most common questions about StreamVibe." />
 
