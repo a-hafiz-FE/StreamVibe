@@ -5,11 +5,16 @@ import CardText from '../../../Components/CardText'
 
 const DeviceSection = () => {
 
-  const desc = "StreamVibe is optimized for both Android and iOS smartphones. Download our app from the Google Play Store or the Apple App Store"
+  const [showLong, setShowLong] = useState(true);
 
+  const desc = "With StreamVibe, you can enjoy your favorite movies and TV shows anytime, anywhere."
+  const desc1 = "With StreamVibe, you can enjoy your favorite movies and TV shows anytime, anywhere. Our platform is designed to be compatible with a wide range of devices, ensuring that you never miss a moment of entertainment."
   return (
-    <section className='flex flex-col gap-15 py-20'>
-      <CardText Ctitle='We Provide you streaming experience across various devices.' Cdesc='With StreamVibe, you can enjoy your favorite movies and TV shows anytime, anywhere. Our platform is designed to be compatible with a wide range of devices, ensuring that you never miss a moment of entertainment.' />
+    <section className='flex flex-col gap-10 md:gap-15 py-20'>
+      <CardText
+        cTitle='We Provide you streaming experience across various devices.'
+        cDesc={showLong ? desc1 : desc}
+      />
 
       <section className='flex flex-col gap-5 items-center'>
         <section className='flex gap-5'>

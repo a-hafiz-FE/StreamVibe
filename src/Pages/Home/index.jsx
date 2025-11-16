@@ -11,19 +11,19 @@ const Home = () => {
   return (
     <main>
       <section className='h-screen bg-[#141414]'>
-        {/* <Landing /> */}
+        <Landing />
       </section>
 
 
-      <section className='px-17.5'>
-        {/* <CategorySection /> */}
+      <section className='px-4 md:px-17.5'>
+        <CategorySection />
       </section>
-      <section className='flex flex-col px-20'>
+      <section className='flex flex-col px-3.75 md:px-20'>
         
-        {/* <DeviceSection />
-        <FreqQuestions />
-        <PlanSection />
-        <TrailSection /> */}
+        <DeviceSection />
+        {/* <FreqQuestions /> */}
+        {/* <PlanSection /> */}
+        {/* <TrailSection /> */}
 
         
       </section>

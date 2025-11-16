@@ -16,7 +16,7 @@ const Header = () => {
         <NavBar />
       </section>
       {/* Right */}
-      <section className='hidden md:flex md:justify-center lg:justify-end md:gap-3.5 md:flex-1'>
+      <section className='hidden md:flex md:justify-end md:gap-3.5 md:flex-1'>
         {/* <Image imgSrc='/src/assets/Search.svg' customClass='h-6' /> */}
         <FaSistrix className="text-white size-6 cursor-pointer"/>
         {/* <FaSearch className="text-white font-light size-6" /> */}
