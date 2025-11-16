@@ -1,11 +1,10 @@
-import { useState } from 'react'
+import { lazy, useState } from 'react'
 import './App.css'
-import Home from './Pages/Home/Home'
+import Home from './Pages/Home'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import MoviesShows from './Pages/Movies&Shows/MoviesShows';
 import Support from './Pages/Support/Support';
 import Subscriptions from './Pages/Subscriptions/Subscriptions';
-
 function App() {
   const [count, setCount] = useState(0)
 
@@ -22,5 +21,7 @@ function App() {
     </>
   )
 }
+
+
 
 export default App

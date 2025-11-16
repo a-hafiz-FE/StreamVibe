@@ -17,17 +17,17 @@ const NavBar = () => {
   const [activeIndex, setactiveIndex] = useState(NavLinks.index)
 
   return (
-    <nav className='flex gap-4 py-2 px-2 border-2.5 box-border border-[#1F1F1F] bg-[#0F0F0F] rounded-[10px]'>
+    <nav className='flex md:gap-2 md:py-1 md:px-1 lg:gap-4 lg:py-2 lg:px-2 border-[3px] box-border border-[#1F1F1F] bg-[#0F0F0F] rounded-[10px]'>
       {NavLinks.map((link, index) => (
         <Link key={index} to = {link.path}>
           <Button
             key={index}
             onClick={() => setactiveIndex(index)}
-            customClass={`flex gap-2.5 py-3 px-5 rounded-lg border box-border cursor-pointer ${page.pathname == link.path
+            customClass={`flex md:gap-1 md:py-1.5 md:px-2.5 lg:gap-2.5 lg:py-3 lg:px-5 rounded-lg border box-border cursor-pointer ${page.pathname == link.path
                 ? 'border-[#1A1A1A] bg-[#1A1A1A]'
                 : 'hover:border-[#1A1A1A] hover:bg-[#1A1A1A]'
               }`}>
-            <Typography customClass={` ${activeIndex == index ? 'font-medium text-sm' : 'font-normal text-sm'}`}>{link.name}</Typography>
+            <Typography customClass={` ${activeIndex == index ? 'md:font-light md:text-xs lg:font-medium lg:text-sm text-nowrap' : 'text-nowrap md:font-extralight md:text-xs lg:font-normal lg:text-sm'}`}>{link.name}</Typography>
           </Button>
         </Link>
       ))}

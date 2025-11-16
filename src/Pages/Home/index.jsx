@@ -1,0 +1,35 @@
+import Main from '../../Layout/Main'
+import Landing from './Components/Landing'
+import DeviceSection from './Components/DeviceSection'
+import CategorySection from './Components/CategorySection'
+import FreqQuestions from './Components/FreqQuestions'
+import PlanSection from './Components/PlanSection'
+import TrailSection from './Components/TrailSection'
+
+const Home = () => {
+
+  return (
+    <main>
+      <section className='h-screen bg-[#141414]'>
+        {/* <Landing /> */}
+      </section>
+
+
+      <section className='px-17.5'>
+        {/* <CategorySection /> */}
+      </section>
+      <section className='flex flex-col px-20'>
+        
+        {/* <DeviceSection />
+        <FreqQuestions />
+        <PlanSection />
+        <TrailSection /> */}
+
+        
+      </section>
+
+    </main>
+  )
+}
+
+export default Main(Home)

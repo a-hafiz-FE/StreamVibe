@@ -1,6 +1,8 @@
 import React from 'react'
 import Image from '../../Components/Image'
 import NavBar from './NavBar'
+import { FaBars, FaSistrix, FaRegBell, FaSearch  } from 'react-icons/fa';
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
 
 const Header = () => {
   return (
@@ -14,10 +16,20 @@ const Header = () => {
         <NavBar />
       </section>
       {/* Right */}
-      <section className='flex justify-end md:gap-3.5 md:flex-1'>
-        <Image imgSrc='/src/assets/Search.svg' customClass='h-6' />
+      <section className='hidden md:flex md:justify-center lg:justify-end md:gap-3.5 md:flex-1'>
+        {/* <Image imgSrc='/src/assets/Search.svg' customClass='h-6' /> */}
+        <FaSistrix className="text-white size-6 cursor-pointer"/>
+        {/* <FaSearch className="text-white font-light size-6" /> */}
 
-        <Image imgSrc='/src/assets/Bell.svg' customClass='h-6' />
+        {/* <Image imgSrc='/src/assets/Bell.svg' customClass='h-6' /> */}
+        <FaRegBell className="text-white size-6 cursor-pointer" />
+      </section>
+      <section className='md:hidden flex justify-end flex-1'>
+        {/* <FaBars className='text-white size-6' /> */}
+        <div className="p-3 flex gap-2.5 border-[3px] rounded-md bg-[#1A1A1A] border-[#262626]">
+          <HiOutlineMenuAlt3 className="text-white size-6"/>
+        </div>
+        
       </section>
     </header>
   )
