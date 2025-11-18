@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Button from '../../Components/Button'
-import CustomLink from '../../Components/CustomLink'
 import Typography from '../../Components/Typography'
 import { Link, useLocation } from 'react-router-dom'
 

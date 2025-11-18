@@ -21,23 +21,22 @@ const CustomCarousel = () => {
   }, [])
 
   const responsive = {
-    superLargeDesktop: { breakpoint: { max: 4000, min: 3000 }, items: 6 },
-    desktop: { breakpoint: { max: 3000, min: 1024 }, items: 5 },
-    tablet: { breakpoint: { max: 1024, min: 464 }, items: 4 },
-    mobile: { breakpoint: { max: 464, min: 0 }, items: 2 }
+    superLargeDesktop: { breakpoint: { max: 4000, min: 3000 }, items: 6, slidesToSlide: 6 },
+    desktop: { breakpoint: { max: 3000, min: 1024 }, items: 5, slidesToSlide: 5  },
+    tablet: { breakpoint: { max: 1024, min: 464 }, items: 3, slidesToSlide: 3  },
+    mobile: { breakpoint: { max: 464, min: 0 }, items: 2, slidesToSlide: 2  }
   }
 
   return (
     <div className=''>
       <Carousel
-        slidesToSlide={5}
         arrows={false}
         renderButtonGroupOutside={true}
         swipeable={true}
         draggable={true}
         showDots={false}
         responsive={responsive}
-        ssr={true} // means to render carousel on server-side.
+        ssr={false} // means to render carousel on server-side.
         infinite={false}
         autoPlay={false}
         renderDotsOutside={true}
@@ -46,9 +45,9 @@ const CustomCarousel = () => {
         customTransition="transform 800ms ease-in-out"
         transitionDuration={800}
         containerClass="carousel-container"
-        customButtonGroup={showButtons ? <CustomButtonGroup visibleSlides={5} /> : <CustomDot visibleSlides={2} />}
+        customButtonGroup={showButtons ? <CustomButtonGroup /> : <CustomDot />}
         dotListClass="custom-dot-list-style"
-        itemClass="px-2.5"
+        itemClass="pr-5"
       >
 
         <CategoryCard imageSrc='/src/assets/Action.png' Title='Action' />

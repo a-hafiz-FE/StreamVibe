@@ -3,14 +3,13 @@ import Button from '../../../Components/Button'
 import Image from '../../../Components/Image'
 
 
-const CustomButtonGroup = ({ next, previous, goToSlide, visibleSlides = 5, ...rest }) => {
+const CustomButtonGroup = ({ next, previous, goToSlide,   ...rest }) => {
   const { carouselState } = rest;
-  const { currentSlide, totalItems } = carouselState;
+  const { currentSlide, totalItems, slidesToShow } = carouselState;
 
-  const numberOfDots = Math.ceil(totalItems / visibleSlides);
-  const activeDotIndex = Math.floor(currentSlide / visibleSlides);
-  Math.r
-  const maxSlideIndex = (numberOfDots - 1) * visibleSlides;
+  const numberOfDots = Math.ceil(totalItems / slidesToShow);
+  const activeDotIndex = Math.floor(currentSlide / slidesToShow);
+  const maxSlideIndex = (numberOfDots - 1) * slidesToShow;
   return (
     <div className="absolute top-24 right-0 z-10 p-3 flex items-center gap-3 border box-border border-[#1F1F1F] bg-[#0F0F0F] rounded-[10px] ">
       <Button customClass={`cursor-pointer ${currentSlide === 0 ? 'opacity-50 cursor-not-allowed' : ''}`} onClick={previous}>
@@ -21,7 +20,7 @@ const CustomButtonGroup = ({ next, previous, goToSlide, visibleSlides = 5, ...re
         {Array.from({ length: numberOfDots }).map((_, index) => (
           <span
             key={index}
-            onClick={() => goToSlide(index * visibleSlides)}
+            onClick={() => goToSlide(index * slidesToShow)}
             className={`rounded-full cursor-pointer h-1 ${index === activeDotIndex ? 'w-4.5 bg-[#E50000]' : 'w-3.5 bg-[#333333]'
               }`}
           />

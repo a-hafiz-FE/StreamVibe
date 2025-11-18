@@ -21,9 +21,9 @@ const Home = () => {
       <section className='flex flex-col px-3.75 md:px-20'>
         
         <DeviceSection />
-        {/* <FreqQuestions /> */}
-        {/* <PlanSection /> */}
-        {/* <TrailSection /> */}
+        <FreqQuestions />
+        <PlanSection />
+        <TrailSection />
 
         
       </section>
