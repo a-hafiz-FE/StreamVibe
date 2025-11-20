@@ -17,19 +17,12 @@ const Header = () => {
       </section>
       {/* Right */}
       <section className='hidden md:flex md:justify-end md:gap-3.5 md:flex-1'>
-        {/* <Image imgSrc='/src/assets/Search.svg' customClass='h-6' /> */}
         <FaSistrix className="text-white size-6 cursor-pointer"/>
-        {/* <FaSearch className="text-white font-light size-6" /> */}
-
-        {/* <Image imgSrc='/src/assets/Bell.svg' customClass='h-6' /> */}
         <FaRegBell className="text-white size-6 cursor-pointer" />
       </section>
       <section className='md:hidden flex justify-end flex-1'>
-        {/* <FaBars className='text-white size-6' /> */}
+
         <div className="p-3 flex gap-3.5 border-[3px] rounded-md bg-[#1A1A1A] border-[#262626]">
-          {/* <button onClick={() => {}}>
-            <HiOutlineMenuAlt3 className="text-white size-6"/>
-          </button> */}
           <FaRegBell className="text-white size-6 cursor-pointer" />
           <SideMenu />
         </div>

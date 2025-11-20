@@ -1,15 +1,15 @@
 import React from 'react'
 import { useState } from "react";
-import { FaHome, FaInfoCircle, FaTools, FaEnvelope, FaBars, FaSearch, FaAngleDown, FaAngleUp, FaUserFriends, FaChartBar, FaCog, FaQuestion } from "react-icons/fa";
+import { FaHome, FaSearch, FaAngleDown, FaAngleUp, } from "react-icons/fa";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
-import { BiMoviePlay } from "react-icons/bi";
+import { FaFilm } from "react-icons/fa";
 import { BiSupport } from "react-icons/bi";
 import { MdAddCard } from "react-icons/md";
 import { Link, useLocation } from 'react-router-dom'
 
 
 const SideMenu = () => {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
     const [expandedSubmenu, setExpandedSubmenu] = useState("");
     const [searchQuery, setSearchQuery] = useState("");
 
@@ -23,7 +23,7 @@ const SideMenu = () => {
         },
         {
             title: "Movies & Shows",
-            icon: <BiMoviePlay />,
+            icon: <FaFilm />,
             id: "Movies&Shows",
             path: '/Movies&Shows',
             submenu: []
@@ -45,7 +45,7 @@ const SideMenu = () => {
     ];
 
     const [activeItem, setActiveItem] = useState(menuItems.id);
-
+    const page = useLocation();
     const toggleSidebar = () => setIsOpen(!isOpen);
     const toggleSubmenu = (id) => {
         setExpandedSubmenu(expandedSubmenu === id ? "" : id);
@@ -90,7 +90,7 @@ const SideMenu = () => {
                                             if (item.submenu.length > 0) toggleSubmenu(item.id);
                                         }}
                                         className={`w-full flex items-center justify-between px-4 py-2 text-sm font-medium rounded-lg
-                                        ${activeItem === item.path ? "bg-[#E50000] text-[#FFFFFF]" : "text-[#FFFFFF] hover:bg-[#FF9999]"}
+                                        ${page.pathname == item.path ? "bg-[#E50000] text-[#FFFFFF]" : "text-[#FFFFFF] hover:bg-[#FF9999]"}
                                         focus:outline-none focus:ring-2 focus:ring-[#FF1919] transition-colors duration-200`}
                                         aria-expanded={expandedSubmenu === item.id}
                                         aria-controls={`submenu-${item.id}`}

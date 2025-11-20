@@ -4,7 +4,7 @@ import DeviceSection from './Components/DeviceSection'
 import CategorySection from './Components/CategorySection'
 import FreqQuestions from './Components/FreqQuestions'
 import PlanSection from './Components/PlanSection'
-import TrailSection from './Components/TrailSection'
+import TrailSection from '../../Components/TrailSection'
 
 const Home = () => {
 
