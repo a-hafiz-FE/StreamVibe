@@ -14,8 +14,8 @@ const TrailSection = () => {
             cTitleClass="text-center md:text-start"
             cDescClass="text-center md:text-start"
           />
-          <Button customClass='flex rounded-lg h-12.25 w-37.25 py-3.5 px-5 bg-[#E50000] items-center cursor-pointer'>
-            <Typography customClass='font-semibold text-sm'>Start a Free Trail</Typography>
+          <Button customclass='flex rounded-lg h-12.25 w-37.25 py-3.5 px-5 bg-[#E50000] items-center cursor-pointer'>
+            <Typography customclass='font-semibold text-sm'>Start a Free Trail</Typography>
           </Button>
         </div>
       </div>

@@ -18,8 +18,8 @@ const FreqQuestions = () => {
           />
         </section>
         <section className="flex-1 lg:absolute lg:bottom-0 lg:right-0">
-          <Button customClass='h-12.25 py-3.5 px-5 flex gap-2.5 rounded-md bg-[#E50000]'>
-            <Typography customClass='font-semibold text-sm text-nowrap'>Ask a Question</Typography>
+          <Button customclass='h-12.25 py-3.5 px-5 flex gap-2.5 rounded-md bg-[#E50000]'>
+            <Typography customclass='font-semibold text-sm text-nowrap'>Ask a Question</Typography>
           </Button>
         </section>
       </section>

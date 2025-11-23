@@ -22,11 +22,11 @@ const NavBar = () => {
           <Button
             key={index}
             onClick={() => setactiveIndex(index)}
-            customClass={`flex md:gap-1 md:py-1.5 md:px-2.5 lg:gap-2.5 lg:py-3 lg:px-5 rounded-lg border box-border cursor-pointer ${page.pathname == link.path
+            customclass={`flex md:gap-1 md:py-1.5 md:px-2.5 lg:gap-2.5 lg:py-3 lg:px-5 rounded-lg border box-border cursor-pointer ${page.pathname == link.path
                 ? 'border-[#1A1A1A] bg-[#1A1A1A]'
                 : 'hover:border-[#1A1A1A] hover:bg-[#1A1A1A]'
               }`}>
-            <Typography customClass={` ${activeIndex == index ? 'md:font-light md:text-xs lg:font-medium lg:text-sm text-nowrap' : 'text-nowrap md:font-extralight md:text-xs lg:font-normal lg:text-sm'}`}>{link.name}</Typography>
+            <Typography customclass={` ${activeIndex == index ? 'md:font-light md:text-xs lg:font-medium lg:text-sm text-nowrap' : 'text-nowrap md:font-extralight md:text-xs lg:font-normal lg:text-sm'}`}>{link.name}</Typography>
           </Button>
         </Link>
       ))}

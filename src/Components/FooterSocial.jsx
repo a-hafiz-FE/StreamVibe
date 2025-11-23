@@ -10,14 +10,14 @@ const FooterSocial = ({
   return (
     <div className='flex gap-5 flex-col'>
       <section>
-        <Typography customClass='font-semibold text-lg'>{Ltitle}</Typography>
+        <Typography customclass='font-semibold text-lg'>{Ltitle}</Typography>
       </section>
 
       <section className='flex gap-2.5'>
         {Llinks.map((link, index) => {
           return (
-            <CustomLink key={index} customClass='flex rounded-md border box-border border-[#262626] bg-[#1A1A1A] p-3 gap-2.5'>
-              <Image customClass='size-5' imgSrc={`${link}`} />
+            <CustomLink key={index} customclass='flex rounded-md border box-border border-[#262626] bg-[#1A1A1A] p-3 gap-2.5'>
+              <Image customclass='size-5' imgSrc={`${link}`} />
             </CustomLink>
           )
         })}

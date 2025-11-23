@@ -1,13 +1,13 @@
 import React from 'react'
 
 const CustomLink = ({
-  customClass = "",
+  customclass = "",
   href = "",
   onClick,
   children
 }) => {
   return (
-    <a href={href} className={customClass} onClick={onClick}>{children}</a>
+    <a href={href} className={customclass} onClick={onClick}>{children}</a>
   )
 }
 

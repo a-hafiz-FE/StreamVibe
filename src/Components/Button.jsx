@@ -1,12 +1,12 @@
 import React from 'react'
 
 const Button = ({
-  customClass = "",
+  customclass = "",
   onClick,
   children
 }) => {
   return (
-    <button className={` ${customClass}`} onClick={onClick}>{children}</button>
+    <button className={` ${customclass}`} onClick={onClick}>{children}</button>
   )
 }
 

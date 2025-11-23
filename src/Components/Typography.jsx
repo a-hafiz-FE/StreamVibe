@@ -13,13 +13,13 @@ const tagStyles = {
 
 const Typography = ({
   tag = "p",
-  customClass = "",
+  customclass = "",
   children
 }) => {
 
   const Tag = tagStyles.hasOwnProperty() ? tag : "p";
   return (
-    <Tag className={`font-manrope leading-[150%] tracking-normal text-[#FFFFFF] ${tagStyles[Tag]} ${customClass}`}>
+    <Tag className={`font-manrope leading-[150%] tracking-normal text-[#FFFFFF] ${tagStyles[Tag]} ${customclass}`}>
       {children}
     </Tag>
   )

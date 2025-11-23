@@ -20,14 +20,14 @@ const Footer = () => {
         <span className="w-full bg-[#262626] h-0.5" />
 
         <section className="flex flex-col md:flex-row md:justify-between">
-          <Typography customClass='font-normal text-sm !text-[#999999]' >@2023 streamvib, All Rights Reserved</Typography>
+          <Typography customclass='font-normal text-sm !text-[#999999]' >@2023 streamvib, All Rights Reserved</Typography>
 
           <section className="flex gap-4" >
-            <Typography customClass='font-normal text-sm !text-[#999999] cursor-pointer' >Terms of Use</Typography>
+            <Typography customclass='font-normal text-sm !text-[#999999] cursor-pointer' >Terms of Use</Typography>
             <div className="h-full w-0.5 bg-[#262626]" />
-            <Typography customClass='font-normal text-sm !text-[#999999] cursor-pointer' >Privacy Policy</Typography>
+            <Typography customclass='font-normal text-sm !text-[#999999] cursor-pointer' >Privacy Policy</Typography>
             <div className="h-full w-0.5 bg-[#262626]" />
-            <Typography customClass='font-normal text-sm !text-[#999999] cursor-pointer' >Cookie Policy</Typography>
+            <Typography customclass='font-normal text-sm !text-[#999999] cursor-pointer' >Cookie Policy</Typography>
           </section>
 
         </section>

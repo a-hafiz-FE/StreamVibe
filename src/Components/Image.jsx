@@ -1,12 +1,12 @@
 import React from 'react'
 
 const Image = ({
-  imgSrc = "",
-  imgAlt = "",
-  customClass = ""
+  imgSrc,
+  imgAlt,
+  customclass
 }) => {
   return (
-    <img src={imgSrc} alt={imgAlt} className={customClass} />
+    <img src={imgSrc} alt={imgAlt} className={customclass} />
   )
 }
 

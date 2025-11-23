@@ -13,8 +13,8 @@ const CustomButtonGroup = ({ next, previous, goToSlide, customButtonGroupPositio
   return (
     // absolute top-24 right-0 z-10 p-3 flex items-center gap-3 border box-border border-[#1F1F1F] bg-[#0F0F0F] rounded-[10px] 
     <div className={`${customButtonGroupPosition}`}>
-      <Button customClass={`cursor-pointer ${currentSlide === 0 ? 'opacity-50 cursor-not-allowed' : ''}`} onClick={previous}>
-        <Image imgSrc='/src/assets/Left.svg' customClass='p-2.5 border box-border rounded-md border-[#1F1F1F] bg-[#1A1A1A] size-11' />
+      <Button customclass={`cursor-pointer ${currentSlide === 0 ? 'opacity-50 cursor-not-allowed' : ''}`} onClick={previous}>
+        <Image imgSrc='/src/assets/Left.svg' customclass='p-2.5 border box-border rounded-md border-[#1F1F1F] bg-[#1A1A1A] size-11' />
       </Button>
 
       <div className="flex gap-1">
@@ -28,8 +28,8 @@ const CustomButtonGroup = ({ next, previous, goToSlide, customButtonGroupPositio
         ))}
       </div>
 
-      <Button customClass={`cursor-pointer ${currentSlide >= maxSlideIndex ? 'opacity-50 cursor-not-allowed' : ''}`} onClick={next}>
-        <Image imgSrc='/src/assets/Right.svg' customClass='p-2.5 border box-border rounded-md border-[#1F1F1F] bg-[#1A1A1A] size-11' />
+      <Button customclass={`cursor-pointer ${currentSlide >= maxSlideIndex ? 'opacity-50 cursor-not-allowed' : ''}`} onClick={next}>
+        <Image imgSrc='/src/assets/Right.svg' customclass='p-2.5 border box-border rounded-md border-[#1F1F1F] bg-[#1A1A1A] size-11' />
       </Button>
     </div>
   )

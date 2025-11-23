@@ -26,22 +26,22 @@ const CategoryCard = ({
       {/* Image BackGround class */}
       <section className={`${imgBgClass}`}>
         {/* Image Class -- Image Source */}
-        <Image imgSrc={imageSrc} customClass={`${imageClass}`} />
+        <Image imgSrc={imageSrc} customclass={`${imageClass}`} />
         {/* Shadow Class put "hidden" or "absolute" */}
         <div className={`${shadowClass}`} />
       </section>
       {/* Button Class put "flex" or "hidden" */}
-      <Button customClass={`${buttonClass}`}>
+      <Button customclass={`${buttonClass}`}>
         {/* Text container class */}
         <div className={`${textDivClass}`}>
           {/* First Text Class -- First Text */}
-          <Typography customClass={`${fTClass}`} >{fText}</Typography>
+          <Typography customclass={`${fTClass}`} >{fText}</Typography>
           {/* Second Text Class --  Second Text*/}
-          <Typography customClass={`${sTClass}`}>{sText}</Typography>
+          <Typography customclass={`${sTClass}`}>{sText}</Typography>
         </div>
         {children}
         {/* Icon class -- Icon Source */}
-        <Image imgSrc={iconSrc} customClass={`${iconClass}`} />
+        <Image imgSrc={iconSrc} customclass={`${iconClass}`} />
       </Button>
     </div>
   )

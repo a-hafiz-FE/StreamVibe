@@ -1,26 +1,18 @@
 import React, { useState } from 'react'
 import Typography from './Typography'
 
-const PlanButton = () => {
+const PlanButton = ({
+  name = [],
+  activePeriod,
+  onClick
+}) => {
 
-  const option = [
-    { name: "Monthly" },
-    { name: "Yearly" }
-  ]
-
-  const [selected, setselected] = useState(true)
-
-  const changeSlected = () => {
-    setselected(!selected)
-  }
+  const isActive = activePeriod === name
 
   return (
     <>
-      <button className='flex items-center rounded-[100px] py-3 px-5 gap-2.5 focus:rounded-md focus:bg-[#1F1F1F] cursor-pointer'>
-        <Typography customClass='font-medium text-sm !text-[#999999] w-20 focus:w-23.5'>Monthly</Typography>
-      </button>
-      <button className='flex items-center rounded-[100px] py-3 px-5 gap-2.5 focus:rounded-md focus:bg-[#1F1F1F] cursor-pointer'>
-        <Typography customClass='font-medium text-sm !text-[#999999] w-20 focus:w-23.5'>Yearly</Typography>
+      <button onClick={onClick} className={`flex items-center rounded-[100px] py-3 px-5 gap-2.5 ${isActive ? "rounded-md bg-[#1F1F1F]" : ""} cursor-pointer`}>
+        <Typography customclass='font-medium text-sm !text-[#999999] w-20 focus:w-23.5'>{name}</Typography>
       </button>
     </>
   )

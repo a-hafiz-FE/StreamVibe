@@ -10,14 +10,14 @@ const FooterLinks = ({
   return (
     <div className='flex gap-5 flex-col'>
       <section>
-        <Typography customClass='font-semibold text-lg'>{Ltitle}</Typography>
+        <Typography customclass='font-semibold text-lg'>{Ltitle}</Typography>
       </section>
 
       <section className='flex flex-col gap-2.5'>
         {Llinks.map((link, index) => {
           return (
             <CustomLink key={index}>
-              <Typography customClass='font-medium text-base !text-[#999999]'>{link}</Typography>
+              <Typography customclass='font-medium text-base !text-[#999999]'>{link}</Typography>
             </CustomLink>
           )
         })}
