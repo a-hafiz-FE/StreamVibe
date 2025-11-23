@@ -1,9 +1,7 @@
 import CustomCarousel from '../../../Components/CustomCarousel'
 import CategoryCard from '../../../Components/CategoryCard'
 import Typography from '../../../Components/Typography'
-import Image from '../../../Components/Image'
 import { FaPlay, FaPlus, FaRegThumbsUp, FaVolumeUp } from "react-icons/fa";
-import Button from '../../../Components/Button'
 
 const MovieLanding = () => {
 

@@ -2,12 +2,13 @@ import React, { useState } from 'react'
 import Button from '../../Components/Button'
 import Typography from '../../Components/Typography'
 import { Link, useLocation } from 'react-router-dom'
+import LocalizedStrings from 'react-localization'
 
 const NavBar = () => {
 
   const page = useLocation();
   const NavLinks = [
-    { name: 'Home', path: '/' },
+    { name: {}, path: '/' },
     { name: 'Movies & Shows', path: '/Movies&Shows' },
     { name: 'Support', path: '/Support' },
     { name: 'Subscriptions', path: '/Subscriptions' },
