@@ -4,23 +4,26 @@ import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { BiSupport } from "react-icons/bi";
 import { MdAddCard } from "react-icons/md";
 import { Link, useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next';
 
 
 const SideMenu = () => {
+    const { t, i18n } = useTranslation()
+    const isRTL = i18n.dir() === 'rtl'
     const [isOpen, setIsOpen] = useState(false);
     const [expandedSubmenu, setExpandedSubmenu] = useState("");
     const [searchQuery, setSearchQuery] = useState("");
 
     const menuItems = [
         {
-            title: "Home",
+            title: "home",
             icon: <FaHome />,
             id: "home",
             path: '/',
             submenu: []
         },
         {
-            title: "Movies & Shows",
+            title: "MoviesShows",
             icon: <FaFilm />,
             id: "Movies&Shows",
             path: '/Movies&Shows',
@@ -57,25 +60,26 @@ const SideMenu = () => {
                 aria-label="Toggle Sidebar"
             >
                 {/* <FaBars className="w-6 h-6" /> */}
-                <HiOutlineMenuAlt3 className="text-white size-6" />
+                <HiOutlineMenuAlt3 className={`text-white size-6 ${isRTL ? "scale-x-[-1]" : ""}`} />
             </button>
 
             <aside
-                className={`${isOpen ? "translate-x-0" : "-translate-x-full"} 
-                fixed top-0 left-0 h-full bg-[#141414] shadow-lg transition-transform duration-300 ease-in-out 
-                w-64 z-40 border-r border-[#4C4C4C] lg:translate-x-0`}
+                className={`${isRTL ? isOpen ? "translate-x-0" : "translate-x-full transition-none" : isOpen ? "translate-x-0" : "-translate-x-full transition-none"}
+                ${isRTL ? "right-0" : "left-0"} fixed top-0 h-full bg-[#141414] 
+                shadow-lg transition-transform duration-300 ease-in-out 
+                // w-64 z-40 border-r border-[#4C4C4C] lg:translate-x-0`}
             >
                 <div className="p-4 space-y-4">
                     <div className="relative">
                         <input
                             type="text"
-                            placeholder="Search..."
+                            placeholder={t('search_placeholder')}
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className="w-full pl-10 pr-4 py-2 rounded-lg text-[#FFFFFF] border border-[#E50000] focus:outline-none focus:ring-2 focus:ring-[#E50000]"
+                            className={`w-full ${isRTL ? "pr-10" : "pl-10"} pr-4 py-2 rounded-lg text-[#FFFFFF] border border-[#E50000] focus:outline-none focus:ring-2 focus:ring-[#E50000]`}
                             aria-label="Search"
                         />
-                        <FaSearch className="absolute left-3 top-3 text-[#FFFFFF]" />
+                        <FaSearch className={`absolute ${isRTL ? "right-3" : "left-3"} top-3 text-[#FFFFFF]`} />
                     </div>
 
                     <nav className="space-y-1">
@@ -95,7 +99,7 @@ const SideMenu = () => {
                                     >
                                         <div className="flex items-center space-x-3">
                                             <span className="text-xl">{item.icon}</span>
-                                            <span>{item.title}</span>
+                                            <span>{t(item.title)}</span>
                                         </div>
                                         {item.submenu.length > 0 && (
                                             <span className="text-sm">

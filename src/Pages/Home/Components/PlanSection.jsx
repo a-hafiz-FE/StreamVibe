@@ -99,6 +99,7 @@ const PlanSection = () => {
           <section className='flex rounded-lg border box-border border-[#262626] p-2 bg-[#0F0F0F]'>
             {allPlansData.map((plan) => (
               <PlanButton
+                key={plan.name}
                 name={t(plan.name)}
                 activePeriod={activePeriod}
                 onClick={() => setactivePeriod(t(plan.name))} />
@@ -110,9 +111,10 @@ const PlanSection = () => {
       <section className='flex flex-col xl:flex-row gap-5'>
         {activeCards.map((plan) => (
           <PlanCard
+            key={plan.pTitle}
             pTitle={t(plan.pTitle)}
             pDesc={t(plan.pDesc)}
-            pPrice={t(plan.pPrice)}
+            pPrice={plan.pPrice}
             pPeriod={t(plan.period)}
           />
         ))}

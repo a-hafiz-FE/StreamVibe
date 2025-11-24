@@ -45,6 +45,9 @@ const Header = () => {
       <section className='md:hidden flex justify-end flex-1'>
 
         <div className="p-3 flex gap-3.5 border-[3px] rounded-md bg-[#1A1A1A] border-[#262626]">
+          {Object.keys(lngs).map((lng) => (
+            <button className={`${i18n.resolvedLanguage === lng ? "hidden" : "flex text-white font-bold text-base"}`} type='submit' key={lng} onClick={() => { i18n.changeLanguage(lng) }} >{lngs[lng].nativeName}</button>
+          ))}
           <FaRegBell className="text-white size-6 cursor-pointer" />
           <SideMenu />
         </div>
