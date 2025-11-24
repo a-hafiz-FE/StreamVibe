@@ -19,9 +19,9 @@ const Landing = () => {
       <Image imgSrc='/src/assets/AbstractDesign.svg' customclass='absolute size-50 lg:size-75 mb-20' />
       <section className='flex flex-col items-center gap-7.5 md:gap-10 md:px-37.5 absolute bottom-0'>
         <section className='flex flex-col gap-2.5 w-full'>
-          <Typography customclass='font-bold text-[28px] lg:text-[48px] text-center'>{t('The Best Streaming Experience')}</Typography>
-          <Typography customclass='hidden lg:flex lg:font-normal lg:text-sm lg:text-center lg:!text-[#999999]'>{t('mainDesc')}</Typography>
-          <Typography customclass='lg:hidden font-normal text-sm text-center !text-[#999999]'>{t('mainDesc1')}</Typography>
+          <Typography customclass='font-bold text-[28px] lg:text-[48px] text-center'>{t("The Best Streaming Experience")}</Typography>
+          <Typography customclass='hidden lg:flex lg:font-normal lg:text-sm lg:text-center lg:!text-[#999999]'>{t("mainDesc")}</Typography>
+          <Typography customclass='lg:hidden font-normal text-sm text-center !text-[#999999]'>{t("mainDesc1")}</Typography>
         </section>
         <Button customclass='flex rouned-lg py-3.5 px-6 gap-2 bg-[#E50000] h-13 w-52.25 justify-center rounded-lg cursor-pointer'>
           <FaPlay className={`size-6 text-white ${isRTL ? "transform scale-x-[-1]" : ""}`} />

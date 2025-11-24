@@ -1,0 +1,1 @@
+import{c as e,f as t,l as n,r,u as i}from"./index-C1WLSdzo.js";i();var a=t(n(),1),o=r(()=>(0,a.jsx)(`div`,{className:`flex items-center justify-center h-screen bg-[#141414]`,children:(0,a.jsx)(e,{customclass:`font-bold text-[48px]`,children:`Subscriptions`})}));export{o as default};

@@ -4,9 +4,12 @@ import './index.css'
 import App from './App.jsx'
 
 import './Utils/i18n.js'
+import React from 'react'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <React.Suspense fallback="loading">
+      <App />
+    </React.Suspense>
   </StrictMode>,
 )
