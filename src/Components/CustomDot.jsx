@@ -1,8 +1,12 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next';
 
 const CustomDot = ({ next, previous, goToSlide, customDotPosition, ...rest }) => {
     const { carouselState } = rest;
     const { currentSlide, totalItems, slidesToShow } = carouselState;
+
+    const { i18n } = useTranslation()
+    const isRTL = i18n.dir() ==='rtl'
 
     const numberOfDots = Math.ceil(totalItems / slidesToShow);
     const activeDotIndex = Math.floor(currentSlide / slidesToShow);
@@ -10,7 +14,7 @@ const CustomDot = ({ next, previous, goToSlide, customDotPosition, ...rest }) =>
     const maxSlideIndex = (numberOfDots - 1) * slidesToShow;
     return (
         // pt-5 justify-center flex
-        <div className={customDotPosition}>
+        <div className={`${customDotPosition} ${isRTL ? "flex-row-reverse" : ""} `}>
             {Array.from({ length: numberOfDots }).map((_, index) => (
                 <span
                     key={index}

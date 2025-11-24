@@ -2,10 +2,16 @@
 import CardText from '../../../Components/CardText'
 import CustomCarousel from '../../../Components/CustomCarousel'
 import CategoryCard from "../../../Components/CategoryCard"
+import { FaArrowRight } from "react-icons/fa6";
+
+import { useTranslation } from 'react-i18next'
 
 
 const CategorySection = () => {
 
+  const { t, i18n } = useTranslation()
+
+  const isRTL = i18n.dir() === 'rtl'
 
   const CatList = [
     { imgSrc: '/src/assets/Action.png', title: 'Action', relDate: "11 April 2023" },
@@ -35,16 +41,16 @@ const CategorySection = () => {
 
   return (
     <section className='relative flex flex-col gap-10 md:gap-15 py-15 md:py-20'>
-      <section className='flex lg:pr-60 gap-10 md:gap-20'>
+      <section className={`flex ${isRTL ? "lg:pl-60" : "lg:pr-60"} gap-10 md:gap-20`}>
         <CardText
-          cTitle="Explore our wide variety of categories"
-          cDesc="Whether you're looking for a comedy to make you laugh, a drama to make you think, or a documentary to learn something new"
+          cTitle={t('categoriesTitle')}
+          cDesc={t('categoriesDesc')}
         />
       </section>
 
       <CustomCarousel
         items={5}
-        customButtonGroupPosition={"absolute top-24 right-0 z-10 p-3 flex items-center gap-3 border box-border border-[#1F1F1F] bg-[#0F0F0F] rounded-[10px]"}
+        customButtonGroupPosition={`absolute top-24 ${isRTL ? "left-0 flex-row-reverse" : "right-0"} z-10 p-3 flex items-center gap-3 border box-border border-[#1F1F1F] bg-[#0F0F0F] rounded-[10px]`}
         customDotPosition={"pt-5 justify-center flex"}
         itemClass={"pr-2.5"}
 
@@ -55,12 +61,12 @@ const CategorySection = () => {
             imgBgClass={"relative"}
             imageClass={"size-full flex flex-col gap-1.25"}
             shadowClass={"absolute top-0 left-0 bg-linear-to-b h-full w-full from-transparent to-black"}
-            buttonClass={"flex justify-between items-center mt-1 cursor-pointer"}
+            buttonClass={`flex justify-between items-center mt-1 cursor-pointer ${isRTL ? 'flex-row-reverse' : ''}`}
+            textDivClass={"flex"}
             sTClass={"font-semibold text-sm md:text-base"}
-            iconSrc={"src/assets/Right.svg"}
-            iconClass={"size-5 md:size-6"}
+            iconName={<FaArrowRight className={`size-5 md:size-7 text-white ${isRTL ? 'transform scale-x-[-1]' : ''}`} />}
             imageSrc={card.imgSrc}
-            sText={card.title}
+            sText={t(card.title)}
           />
         ))}
 

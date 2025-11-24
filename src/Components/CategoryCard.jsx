@@ -17,7 +17,8 @@ const CategoryCard = ({
   sText,
   iconSrc,
   iconClass,
-  children
+  children,
+  iconName,
 
 }) => {
   return (
@@ -41,7 +42,7 @@ const CategoryCard = ({
         </div>
         {children}
         {/* Icon class -- Icon Source */}
-        <Image imgSrc={iconSrc} customclass={`${iconClass}`} />
+        {iconName}
       </Button>
     </div>
   )

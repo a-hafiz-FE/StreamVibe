@@ -2,9 +2,14 @@ import React from 'react'
 import Image from '../../../Components/Image'
 import Button from '../../../Components/Button'
 import Typography from '../../../Components/Typography'
+import { FaPlay } from "react-icons/fa6";
+
+import { useTranslation } from 'react-i18next'
 
 
 const Landing = () => {
+  const { t, i18n } = useTranslation()
+  const isRTL = i18n.dir() === 'rtl'
   return (
     <section className='flex relative h-full justify-center items-center'>
       <Image imgSrc='/src/assets/BGImage.png' customclass='object-cover h-full absolute top-0 left-0' />
@@ -14,13 +19,13 @@ const Landing = () => {
       <Image imgSrc='/src/assets/AbstractDesign.svg' customclass='absolute size-50 lg:size-75 mb-20' />
       <section className='flex flex-col items-center gap-7.5 md:gap-10 md:px-37.5 absolute bottom-0'>
         <section className='flex flex-col gap-2.5 w-full'>
-          <Typography customclass='font-bold text-[28px] lg:text-[48px] text-center'>The Best Streaming Experience</Typography>
-          <Typography customclass='hidden lg:flex lg:font-normal lg:text-sm lg:text-center lg:!text-[#999999]'>StreamVibe is the best streaming experience for watching your favorite movies and shows on demand, anytime, anywhere. With StreamVibe, you can enjoy a wide variety of content, including the latest blockbusters, classic movies, popular TV shows, and more. You can also create your own watchlists, so you can easily find the content you want to watch.</Typography>
-          <Typography customclass='lg:hidden font-normal text-sm text-center !text-[#999999]'>StreamVibe is the best streaming experience for watching your favorite movies and shows on demand, anytime, anywhere.</Typography>
+          <Typography customclass='font-bold text-[28px] lg:text-[48px] text-center'>{t('The Best Streaming Experience')}</Typography>
+          <Typography customclass='hidden lg:flex lg:font-normal lg:text-sm lg:text-center lg:!text-[#999999]'>{t('mainDesc')}</Typography>
+          <Typography customclass='lg:hidden font-normal text-sm text-center !text-[#999999]'>{t('mainDesc1')}</Typography>
         </section>
         <Button customclass='flex rouned-lg py-3.5 px-6 gap-2 bg-[#E50000] h-13 w-52.25 justify-center rounded-lg cursor-pointer'>
-          <Image imgSrc='/src/assets/Play.svg' />
-          <Typography customclass='font-semibold text-sm'>Start Watching Now</Typography>
+          <FaPlay className={`size-6 text-white ${isRTL ? "transform scale-x-[-1]" : ""}`} />
+          <Typography customclass='font-semibold text-sm text-nowrap'>{t('Start Watching Now')}</Typography>
         </Button>
       </section>
     </section>

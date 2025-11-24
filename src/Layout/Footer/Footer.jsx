@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import Typography from '../../Components/Typography'
 import FooterLinks from '../../Components/FooterLinks'
 import FooterSocial from '../../Components/FooterSocial'
@@ -37,4 +37,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default memo(Footer)

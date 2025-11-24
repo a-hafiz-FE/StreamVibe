@@ -1,15 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, memo } from 'react'
 import Button from '../../Components/Button'
 import Typography from '../../Components/Typography'
 import { Link, useLocation } from 'react-router-dom'
-import LocalizedStrings from 'react-localization'
+
+import { useTranslation } from 'react-i18next';
 
 const NavBar = () => {
+  const { t } = useTranslation()
 
   const page = useLocation();
   const NavLinks = [
-    { name: {}, path: '/' },
-    { name: 'Movies & Shows', path: '/Movies&Shows' },
+    { name: 'home', path: '/' },
+    { name: 'MoviesShows', path: '/Movies&Shows' },
     { name: 'Support', path: '/Support' },
     { name: 'Subscriptions', path: '/Subscriptions' },
   ]
@@ -27,7 +29,7 @@ const NavBar = () => {
                 ? 'border-[#1A1A1A] bg-[#1A1A1A]'
                 : 'hover:border-[#1A1A1A] hover:bg-[#1A1A1A]'
               }`}>
-            <Typography customclass={` ${activeIndex == index ? 'md:font-light md:text-xs lg:font-medium lg:text-sm text-nowrap' : 'text-nowrap md:font-extralight md:text-xs lg:font-normal lg:text-sm'}`}>{link.name}</Typography>
+            <Typography customclass={` ${activeIndex == index ? 'md:font-light md:text-xs lg:font-medium lg:text-sm text-nowrap' : 'text-nowrap md:font-extralight md:text-xs lg:font-normal lg:text-sm'}`}>{t(link.name)}</Typography>
           </Button>
         </Link>
       ))}
@@ -35,4 +37,4 @@ const NavBar = () => {
   )
 }
 
-export default NavBar
+export default memo(NavBar)

@@ -5,6 +5,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 const MoviesShows = lazy(() => import('./Pages/Movies&Shows'));
 const Support = lazy(() => import('./Pages/Support'));
 const Subscriptions = lazy(() => import('./Pages/Subscriptions'));
+
+
+
+
 function App() {
   const [count, setCount] = useState(0)
 

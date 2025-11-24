@@ -1,8 +1,6 @@
-import React from 'react'
-import { useState } from "react";
-import { FaHome, FaSearch, FaAngleDown, FaAngleUp, } from "react-icons/fa";
+import React, { useState, memo } from 'react'
+import { FaHome, FaSearch, FaAngleDown, FaAngleUp, FaFilm } from "react-icons/fa";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
-import { FaFilm } from "react-icons/fa";
 import { BiSupport } from "react-icons/bi";
 import { MdAddCard } from "react-icons/md";
 import { Link, useLocation } from 'react-router-dom'
@@ -136,4 +134,4 @@ const SideMenu = () => {
     );
 }
 
-export default SideMenu
+export default memo(SideMenu)

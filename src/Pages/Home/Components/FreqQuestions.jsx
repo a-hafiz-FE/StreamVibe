@@ -3,40 +3,44 @@ import Typography from '../../../Components/Typography'
 import Button from '../../../Components/Button'
 import QuestionCard from '../../../Components/QuestionCard'
 import CardText from '../../../Components/CardText'
+import { useTranslation } from 'react-i18next'
 
 const FreqQuestions = () => {
 
-  const QAns = "No Answer Available Yet"
+  const { t, i18n } = useTranslation()
+  const isRTL = i18n.dir() === 'rtl'
+
+  const QAns = t('NoAnswerAvailableYet')
   return (
     <div className='flex flex-col gap-10 md:gap-15'>
       <section className='relative flex flex-col md:flex-row gap-5 md:gap-20'>
         <section className="">
           <CardText
-            cTitle='Frequently Asked Questions'
-            cDesc="Got questions? We've got answers! Check out our FAQ section to find answers to the most common questions about StreamVibe."
+            cTitle={t('qTitle')}
+            cDesc={t('qDesc')}
             cTitleClass="!text-[20px]"
           />
         </section>
-        <section className="flex-1 lg:absolute lg:bottom-0 lg:right-0">
+        <section className={`flex-1 lg:absolute lg:bottom-0 ${isRTL ? "lg:left-0" : "lg:right-0"}`}>
           <Button customclass='h-12.25 py-3.5 px-5 flex gap-2.5 rounded-md bg-[#E50000]'>
-            <Typography customclass='font-semibold text-sm text-nowrap'>Ask a Question</Typography>
+            <Typography customclass='font-semibold text-sm text-nowrap'>{t('AskaQuestion')}</Typography>
           </Button>
         </section>
       </section>
 
       <section className='flex flex-col lg:flex-row gap-5 lg:gap-10'>
         <section className='flex flex-col gap-5 w-full'>
-          <QuestionCard Qnumber="01" Qtitle='What is StreamVibe?' Qans='StreamVibe is a streaming service that allows you to watch movies and shows on demand.' />
-          <QuestionCard Qnumber="02" Qtitle='How much does StreamVibe cost?' Qans={QAns} />
-          <QuestionCard Qnumber="03" Qtitle='What content is available on StreamVibe?' Qans={QAns} />
-          <QuestionCard Qnumber="04" Qtitle='How can I watch StreamVibe?' Qans={QAns} />
+          <QuestionCard Qnumber="01" Qtitle={t('q1')} Qans={t('a1')} />
+          <QuestionCard Qnumber="02" Qtitle={t('q2')} Qans={QAns} />
+          <QuestionCard Qnumber="03" Qtitle={t('q3')} Qans={QAns} />
+          <QuestionCard Qnumber="04" Qtitle={t('q4')} Qans={QAns} />
         </section>
 
         <section className='flex flex-col gap-5 w-full'>
-          <QuestionCard Qnumber="05" Qtitle='How do I sign up for StreamVibe?' Qans={QAns} />
-          <QuestionCard Qnumber="06" Qtitle='What is the StreamVibe free trial?' Qans={QAns} />
-          <QuestionCard Qnumber="07" Qtitle='How do I contact StreamVibe customer support?' Qans={QAns} />
-          <QuestionCard Qnumber="08" Qtitle='What are the StreamVibe payment methods?' Qans={QAns} />
+          <QuestionCard Qnumber="05" Qtitle={t('q5')} Qans={QAns} />
+          <QuestionCard Qnumber="06" Qtitle={t('q6')} Qans={QAns} />
+          <QuestionCard Qnumber="07" Qtitle={t('q7')} Qans={QAns} />
+          <QuestionCard Qnumber="08" Qtitle={t('q8')} Qans={QAns} />
         </section>
       </section>
     </div>
