@@ -14,8 +14,8 @@ const PlanButton = ({
 
   return (
     <>
-      <button onClick={onClick} className={`flex items-center rounded-[100px] py-3 px-5 gap-2.5 ${isActive ? "rounded-md bg-[#1F1F1F]" : ""} cursor-pointer`}>
-        <Typography customclass='font-medium text-sm !text-[#999999] w-20 focus:w-23.5'>{name}</Typography>
+      <button onClick={onClick} className={`flex items-center rounded-[100px] py-3 px-5 gap-2.5 ${isActive ? "rounded-md bg-[var(--button-bg-black)]" : ""} cursor-pointer`}>
+        <Typography customclass='font-medium text-sm !text-[var(--text-secondary)] w-20 focus:w-23.5'>{name}</Typography>
       </button>
     </>
   )

@@ -1,7 +1,5 @@
-import React from 'react'
 import Typography from './Typography'
 import CustomLink from './CustomLink'
-import Image from './Image'
 
 const FooterLinks = ({
   Ltitle = '',
@@ -17,7 +15,7 @@ const FooterLinks = ({
         {Llinks.map((link, index) => {
           return (
             <CustomLink key={index}>
-              <Typography customclass='font-medium text-base !text-[#999999]'>{link}</Typography>
+              <Typography customclass='font-medium text-base !text-[var(--text-secondary)]'>{link}</Typography>
             </CustomLink>
           )
         })}

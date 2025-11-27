@@ -3,6 +3,7 @@ import "react-multi-carousel/lib/styles.css";
 import CarouselModule from "react-multi-carousel";
 import CustomButtonGroup from './CustomButtonGroup';
 import CustomDot from './CustomDot';
+import { useTranslation } from 'react-i18next';
 const Carousel = CarouselModule.default;
 
 const CustomCarousel = ({
@@ -12,6 +13,9 @@ const CustomCarousel = ({
   itemClass,
   children
 }) => {
+
+  const { t,i18n } = useTranslation()
+  const isRTL = i18n.dir() === 'rtl'
 
   const isOneItem = items === 1;
 
@@ -30,13 +34,13 @@ const CustomCarousel = ({
   const responsive = items === 1 ? {
     superLargeDesktop: { breakpoint: { max: 4000, min: 3000 }, items: 1, slidesToSlide: 1 },
     desktop: { breakpoint: { max: 3000, min: 1024 }, items: 1, slidesToSlide: 1 },
-    tablet: { breakpoint: { max: 1024, min: 464 }, items: 1, slidesToSlide: 1 },
-    mobile: { breakpoint: { max: 464, min: 0 }, items: 1, slidesToSlide: 1 }
+    tablet: { breakpoint: { max: 1024, min: 600 }, items: 1, slidesToSlide: 1 },
+    mobile: { breakpoint: { max: 600, min: 0 }, items: 1, slidesToSlide: 1 }
   } : {
     superLargeDesktop: { breakpoint: { max: 4000, min: 3000 }, items: items + 1, slidesToSlide: items + 1 },
     desktop: { breakpoint: { max: 3000, min: 1024 }, items: items, slidesToSlide: items },
-    tablet: { breakpoint: { max: 1024, min: 464 }, items: Math.max(2, Math.ceil(items / 2)), slidesToSlide: Math.max(2, Math.ceil(items / 2)) },
-    mobile: { breakpoint: { max: 464, min: 0 }, items: Math.min(2, Math.floor(items / 2)), slidesToSlide: Math.min(2, Math.floor(items / 2)) }
+    tablet: { breakpoint: { max: 1024, min: 600 }, items: Math.max(2, Math.ceil(items / 2)), slidesToSlide: Math.max(2, Math.ceil(items / 2)) },
+    mobile: { breakpoint: { max: 600, min: 0 }, items: Math.min(2, Math.floor(items / 2)), slidesToSlide: Math.min(2, Math.floor(items / 2)) }
   }
 
   return (
@@ -48,6 +52,7 @@ const CustomCarousel = ({
         draggable={true}
         showDots={false}
         responsive={responsive}
+        rtl={isRTL}
         ssr={false} // means to render carousel on server-side.
         infinite={false}
         autoPlay={false}

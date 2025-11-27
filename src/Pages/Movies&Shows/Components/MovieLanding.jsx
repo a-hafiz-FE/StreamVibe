@@ -2,8 +2,16 @@ import CustomCarousel from '../../../Components/CustomCarousel'
 import CategoryCard from '../../../Components/CategoryCard'
 import Typography from '../../../Components/Typography'
 import { FaPlay, FaPlus, FaRegThumbsUp, FaVolumeUp } from "react-icons/fa";
+import { useTranslation } from 'react-i18next';
+import { useTheme } from '../../../Providers/ThemeProvider';
 
 const MovieLanding = () => {
+
+    const { t, i18n } = useTranslation()
+    const isRTL = i18n.dir() === 'rtl'
+
+    const { theme } = useTheme()
+    const isLIGHT = theme === 'light'
 
     const mainMovies = [
     {
@@ -29,40 +37,40 @@ const MovieLanding = () => {
   ]
 
     return (
-        <section className=' relative mt-20'>
+        <section className='relative mt-20'>
             <CustomCarousel
                 items={1}
-                customButtonGroupPosition={"absolute bottom-0 flex items-center justify-between w-full px-20 pb-10"}
+                customButtonGroupPosition={`absolute bottom-0 flex items-center justify-between w-full px-20 pb-10`}
                 customDotPosition={"absolute bottom-0 flex items-center justify-center w-full px-20 pb-10"}
             >
                 {mainMovies.map((card) => (
                     <CategoryCard
                         cardBgClass={""}
                         imgBgClass={"relative h-full pt-6 lg:pt-10 pb-4"}
-                        imageClass={"object-cover h-120 lg:h-full rounded-xl border box-border border-[#262626]"}
+                        imageClass={"object-cover justify-self-center h-120 lg:h-full rounded-xl border box-border border-[var(--button-border-2)]"}
                         imageSrc={card.imgSrc}
-                        shadowClass={"absolute pt-6 lg:pt-10 pb-4 top-0 left-0 w-full h-full bg-linear-[180deg,#14141400_50%,#14141466_60%,#141414_90%]"}
+                        shadowClass={`absolute pt-6 lg:pt-10 pb-4 top-0 left-0 w-full h-full ${isLIGHT ? "bg-linear-[180deg,#F8F8F800_50%,#F8F8F866_60%,#F8F8F8_90%]" : "bg-linear-[180deg,#14141400_50%,#14141466_60%,#141414_90%]"}`}
                         buttonClass={"absolute bottom-0 mb-10 md:mb-15 lg:mb-20 px-20 flex justify-end w-full flex-col gap-5 items-center"}
                         textDivClass={"flex flex-col"}
                         fTClass={"font-bold text-[24px] lg:text-[30px]"}
                         fText={card.title}
-                        sTClass={"hidden lg:flex font-medium text-base !text-[#999999]"}
+                        sTClass={"hidden lg:flex font-medium text-base !text-[var(--text-secondary)]"}
                         sText={card.desc}
                     >
                         <div className='flex flex-col lg:flex-row gap-1 lg:gap-5'>
                             <div className='flex rounded-lg py-3.5 lg:px-5 items-center justify-center w-full gap-1 bg-[#E50000] cursor-pointer'>
-                                <FaPlay className='size-6 text-white' />
-                                <Typography customclass='font-semibold text-sm'>Play Now</Typography>
+                                <FaPlay className={`size-6 text-[var(--text-primary)] ${isRTL ? "scale-x-[-1]" : ""}`} />
+                                <Typography customclass='font-semibold text-sm'>{t("play_now")}</Typography>
                             </div>
                             <div className='flex gap-2'>
-                                <div className='flex rounded-lg border box-border border-[#262626] bg-[#0F0F0F] p-3 gap-2.5 cursor-pointer'>
-                                    <FaPlus className='size-6 text-white' />
+                                <div className='flex rounded-lg border box-border border-[var(--button-border-2)] bg-[var(--card-bg-black-1)] p-3 gap-2.5 cursor-pointer'>
+                                    <FaPlus className='size-6 text-[var(--text-primary)]' />
                                 </div>
-                                <div className='flex rounded-lg border box-border border-[#262626] bg-[#0F0F0F] p-3 gap-2.5 cursor-pointer'>
-                                    <FaRegThumbsUp className='size-6 text-white' />
+                                <div className='flex rounded-lg border box-border border-[var(--button-border-2)] bg-[var(--card-bg-black-1)] p-3 gap-2.5 cursor-pointer'>
+                                    <FaRegThumbsUp className='size-6 text-[var(--text-primary)]' />
                                 </div>
-                                <div className='flex rounded-lg border box-border border-[#262626] bg-[#0F0F0F] p-3 gap-2.5 cursor-pointer'>
-                                    <FaVolumeUp className='size-6 text-white' />
+                                <div className='flex rounded-lg border box-border border-[var(--button-border-2)] bg-[var(--card-bg-black-1)] p-3 gap-2.5 cursor-pointer'>
+                                    <FaVolumeUp className='size-6 text-[var(--text-primary)]' />
                                 </div>
                             </div>
                         </div>

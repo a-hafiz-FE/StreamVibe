@@ -4,7 +4,7 @@ import Main from '../../Layout/Main'
 
 const Support = () => {
   return (
-    <div className='h-screen bg-[#141414] flex items-center justify-center'>
+    <div className='h-screen bg-[var(--bg-color)] flex items-center justify-center'>
       <Typography customclass='font-bold text-[48px]' >Support</Typography>
     </div>
   )

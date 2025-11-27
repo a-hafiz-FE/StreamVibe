@@ -4,7 +4,7 @@ import Main from '../../Layout/Main'
 
 const Subscriptions = () => {
   return (
-    <div className='flex items-center justify-center h-screen bg-[#141414]'>
+    <div className='flex items-center justify-center h-screen bg-[var(--bg-color)]'>
       <Typography customclass='font-bold text-[48px]'>Subscriptions</Typography>
     </div>
   )

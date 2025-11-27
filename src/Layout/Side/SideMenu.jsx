@@ -1,10 +1,12 @@
-import React, { useState, memo } from 'react'
-import { FaHome, FaSearch, FaAngleDown, FaAngleUp, FaFilm } from "react-icons/fa";
+import React, { useState, memo, useEffect } from 'react'
+import { FaHome, FaSearch, FaAngleDown, FaAngleUp, FaRegBell, FaFilm } from "react-icons/fa";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { BiSupport } from "react-icons/bi";
 import { MdAddCard } from "react-icons/md";
 import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
+import LanguageButton from '../Header/LanguageButton';
+import ToggleButton from '../Header/ToggleButton';
 
 
 const SideMenu = () => {
@@ -60,14 +62,14 @@ const SideMenu = () => {
                 aria-label="Toggle Sidebar"
             >
                 {/* <FaBars className="w-6 h-6" /> */}
-                <HiOutlineMenuAlt3 className={`text-white size-6 ${isRTL ? "scale-x-[-1]" : ""}`} />
+                <HiOutlineMenuAlt3 className={`text-[var(--text-primary)] size-6 ${isRTL ? "scale-x-[-1]" : ""}`} />
             </button>
 
             <aside
-                className={`${isRTL ? isOpen ? "translate-x-0" : "translate-x-full transition-none" : isOpen ? "translate-x-0" : "-translate-x-full transition-none"}
-                ${isRTL ? "right-0" : "left-0"} fixed top-0 h-full bg-[#141414] 
-                shadow-lg transition-transform duration-300 ease-in-out 
-                // w-64 z-40 border-r border-[#4C4C4C] lg:translate-x-0`}
+                className={`${isRTL ? isOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full" : isOpen ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-full"}
+                start-0 fixed top-0 h-full bg-[var(--background-color)] 
+                shadow-lg transition-all duration-300 ease-in-out
+                w-64 z-40 border-r border-[#4C4C4C] lg:translate-x-0`}
             >
                 <div className="p-4 space-y-4">
                     <div className="relative">
@@ -76,13 +78,18 @@ const SideMenu = () => {
                             placeholder={t('search_placeholder')}
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className={`w-full ${isRTL ? "pr-10" : "pl-10"} pr-4 py-2 rounded-lg text-[#FFFFFF] border border-[#E50000] focus:outline-none focus:ring-2 focus:ring-[#E50000]`}
+                            className={`w-full ${isRTL ? "pr-10" : "pl-10"} pr-4 py-2 rounded-lg text-[var(--text-primary)] border border-[#E50000] focus:outline-none focus:ring-2 focus:ring-[#E50000]`}
                             aria-label="Search"
                         />
-                        <FaSearch className={`absolute ${isRTL ? "right-3" : "left-3"} top-3 text-[#FFFFFF]`} />
+                        <FaSearch className={`absolute ${isRTL ? "right-3" : "left-3"} top-3 text-[var(--text-primary)]`} />
                     </div>
 
                     <nav className="space-y-1">
+                        <section className='flex flex-row-reverse justify-between my-4'>
+                            <ToggleButton />
+                            <LanguageButton />
+                            <FaRegBell className="text-[var(--text-primary))] size-6 cursor-pointer" />
+                        </section>
                         {menuItems.map((item) => (
                             <div key={item.id} className="space-y-1">
                                 <Link key={item.id} to={item.path}>
@@ -92,7 +99,7 @@ const SideMenu = () => {
                                             if (item.submenu.length > 0) toggleSubmenu(item.id);
                                         }}
                                         className={`w-full flex items-center justify-between px-4 py-2 text-sm font-medium rounded-lg
-                                        ${page.pathname == item.path ? "bg-[#E50000] text-[#FFFFFF]" : "text-[#FFFFFF] hover:bg-[#FF9999]"}
+                                        ${page.pathname == item.path ? "bg-[#E50000] text-[var(--text-primary)]" : "text-[var(--text-primary)] hover:bg-[#FF9999]"}
                                         focus:outline-none focus:ring-2 focus:ring-[#FF1919] transition-colors duration-200`}
                                         aria-expanded={expandedSubmenu === item.id}
                                         aria-controls={`submenu-${item.id}`}
@@ -120,7 +127,7 @@ const SideMenu = () => {
                                                 key={subItem.id}
                                                 onClick={() => setActiveItem(subItem.id)}
                                                 className={`w-full flex items-center space-x-3 px-4 py-2 text-sm font-medium rounded-lg
-                                                    ${activeItem === subItem.id ? "bg-[#E50000] text-[#FFFFFF]" : "text-[#FFFFFF] hover:bg-[#FF9999]"}
+                                                    ${activeItem === subItem.id ? "bg-[#E50000] text-[var(--text-primary)]" : "text-[var(--text-primary)] hover:bg-[#FF9999]"}
                                                     focus:outline-none focus:ring-2 focus:ring-[#FF1919] transition-colors duration-200`}
                                             >
                                                 <span className="text-lg">{subItem.icon}</span>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTheme } from '../Providers/ThemeProvider';
 
 const tagStyles = {
   h1: 'text-4xl font-bold',
@@ -16,10 +17,12 @@ const Typography = ({
   customclass = "",
   children
 }) => {
+  const { theme } = useTheme();
+  const isLight = theme === 'light'
 
   const Tag = tagStyles.hasOwnProperty() ? tag : "p";
   return (
-    <Tag className={`font-manrope leading-[150%] tracking-normal text-[#FFFFFF] ${tagStyles[Tag]} ${customclass}`}>
+    <Tag className={`font-manrope leading-[150%] tracking-normal text-[var(--text-primary)] ${tagStyles[Tag]} ${customclass}`}>
       {children}
     </Tag>
   )

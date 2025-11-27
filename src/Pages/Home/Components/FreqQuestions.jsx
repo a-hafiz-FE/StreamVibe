@@ -1,4 +1,3 @@
-import React from 'react'
 import Typography from '../../../Components/Typography'
 import Button from '../../../Components/Button'
 import QuestionCard from '../../../Components/QuestionCard'
@@ -14,7 +13,7 @@ const FreqQuestions = () => {
   return (
     <div className='flex flex-col gap-10 md:gap-15'>
       <section className='relative flex flex-col md:flex-row gap-5 md:gap-20'>
-        <section className="">
+        <section className={`${isRTL ? "lg:pl-80" : "lg:pr-80"}`}>
           <CardText
             cTitle={t('qTitle')}
             cDesc={t('qDesc')}

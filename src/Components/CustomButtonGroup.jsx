@@ -2,9 +2,10 @@ import React from 'react'
 import Button from './Button'
 import Image from './Image'
 import { useTranslation } from 'react-i18next'
+import { FaArrowRight } from "react-icons/fa6";
 
 
-const CustomButtonGroup = ({ next, previous, goToSlide, customButtonGroupPosition,   ...rest }) => {
+const CustomButtonGroup = ({ next, previous, goToSlide, customButtonGroupPosition, ...rest }) => {
   const { carouselState } = rest;
   const { currentSlide, totalItems, slidesToShow } = carouselState;
 
@@ -18,10 +19,12 @@ const CustomButtonGroup = ({ next, previous, goToSlide, customButtonGroupPositio
     // absolute top-24 right-0 z-10 p-3 flex items-center gap-3 border box-border border-[#1F1F1F] bg-[#0F0F0F] rounded-[10px] 
     <div className={`${customButtonGroupPosition}`}>
       <Button customclass={`cursor-pointer ${currentSlide === 0 ? 'opacity-50 cursor-not-allowed' : ''}`} onClick={previous}>
-        <Image imgSrc='/src/assets/Left.svg' customclass='p-2.5 border box-border rounded-md border-[#1F1F1F] bg-[#1A1A1A] size-11' />
+        <FaArrowRight className={`p-2.5 border box-border rounded-md 
+            border-[var(--button-border-1)] bg-[var(--card-bg-black)]
+            text-[var(--text-primary)] ${isRTL ? "" : "scale-x-[-1]"} size-11`} />
       </Button>
 
-      <div className={`${isRTL ? "flex-row-reverse" : ""} flex gap-1`}>
+      <div className={`flex gap-1`}>
         {Array.from({ length: numberOfDots }).map((_, index) => (
           <span
             key={index}
@@ -33,7 +36,9 @@ const CustomButtonGroup = ({ next, previous, goToSlide, customButtonGroupPositio
       </div>
 
       <Button customclass={`cursor-pointer ${currentSlide >= maxSlideIndex ? 'opacity-50 cursor-not-allowed' : ''}`} onClick={next}>
-        <Image imgSrc='/src/assets/Right.svg' customclass='p-2.5 border box-border rounded-md border-[#1F1F1F] bg-[#1A1A1A] size-11' />
+        <FaArrowRight className={`p-2.5 border box-border rounded-md 
+            border-[var(--button-border-1)] bg-[var(--card-bg-black)]
+            text-[var(--text-primary)] size-11 ${isRTL ? "scale-x-[-1]" : ""}`} />
       </Button>
     </div>
   )

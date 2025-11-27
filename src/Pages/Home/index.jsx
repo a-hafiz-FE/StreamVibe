@@ -5,12 +5,15 @@ import CategorySection from './Components/CategorySection'
 import FreqQuestions from './Components/FreqQuestions'
 import PlanSection from './Components/PlanSection'
 import TrailSection from '../../Components/TrailSection'
+import { useTheme } from '../../Providers/ThemeProvider'
 
 const Home = () => {
 
+  const { theme } = useTheme();
+
   return (
     <main>
-      <section className='h-screen bg-[#141414]'>
+      <section className={`h-screen bg-[var(--background-color)]`}>
         <Landing />
       </section>
 

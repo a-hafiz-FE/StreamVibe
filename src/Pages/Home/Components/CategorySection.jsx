@@ -50,21 +50,21 @@ const CategorySection = () => {
 
       <CustomCarousel
         items={5}
-        customButtonGroupPosition={`absolute top-24 ${isRTL ? "left-0 flex-row-reverse" : "right-0"} z-10 p-3 flex items-center gap-3 border box-border border-[#1F1F1F] bg-[#0F0F0F] rounded-[10px]`}
+        customButtonGroupPosition={`absolute top-24 end-0 z-10 p-3 flex items-center gap-3 border box-border border-[var(--button-border-1)] bg-[var(--card-bg-black-1)] rounded-[10px]`}
         customDotPosition={"pt-5 justify-center flex"}
         itemClass={"pr-2.5"}
 
       >
         {CatList.map((card) => (
           <CategoryCard
-            cardBgClass={"flex flex-col rounded-[10px] border box-border border-[#262626] p-5 md:p-6 bg-[#1A1A1A]"}
+            cardBgClass={"flex flex-col rounded-[10px] border box-border border-[var(--button-border-2)] p-5 md:p-6 bg-[var(--card-bg-black)]"}
             imgBgClass={"relative"}
             imageClass={"size-full flex flex-col gap-1.25"}
-            shadowClass={"absolute top-0 left-0 bg-linear-to-b h-full w-full from-transparent to-black"}
-            buttonClass={`flex justify-between items-center mt-1 cursor-pointer ${isRTL ? 'flex-row-reverse' : ''}`}
+            shadowClass={"absolute top-0 left-0 bg-linear-to-b h-full w-full from-transparent to-[var(--background-color)]"}
+            buttonClass={`flex justify-between items-center mt-1 cursor-pointer`}
             textDivClass={"flex"}
             sTClass={"font-semibold text-sm md:text-base"}
-            iconName={<FaArrowRight className={`size-5 md:size-7 text-white ${isRTL ? 'transform scale-x-[-1]' : ''}`} />}
+            iconName={<FaArrowRight className={`size-5 md:size-7 text-[var(--text-primary)] ${isRTL ? 'transform scale-x-[-1]' : ''}`} />}
             imageSrc={card.imgSrc}
             sText={t(card.title)}
           />

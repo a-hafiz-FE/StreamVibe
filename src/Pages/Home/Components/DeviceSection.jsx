@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import Typography from '../../../Components/Typography'
+import { useEffect, useState } from 'react'
 import DeviceCard from '../../../Components/DeviceCard'
 import CardText from '../../../Components/CardText'
 import { useTranslation } from 'react-i18next'

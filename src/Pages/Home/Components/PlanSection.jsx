@@ -96,7 +96,7 @@ const PlanSection = () => {
         />
 
         <section className={`lg:absolute ${isRTL ? "lg:left-0" : "lg:right-0"} flex lg:bottom-0 lg:justify-end`}>
-          <section className='flex rounded-lg border box-border border-[#262626] p-2 bg-[#0F0F0F]'>
+          <section className='flex rounded-lg border box-border border-[var(--button-border-2)] p-2 bg-[var(--card-bg-black-1)]'>
             {allPlansData.map((plan) => (
               <PlanButton
                 key={plan.name}
